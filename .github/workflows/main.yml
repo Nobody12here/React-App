@@ -32,10 +32,13 @@ jobs:
       - uses: actions/borales/yarn@v2.0.0
         with:
             cmd: install
+            
       - name: Build App
         run: yarn build
+        
       - name: install surge
         run: npm install --global surge
+        
       - name: Deploy app to surge
         run: surge ./build testreactapp01212.sh --token ${{secrets.SURGE_TOKEN}}
         
