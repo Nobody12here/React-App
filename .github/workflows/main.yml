@@ -1,0 +1,44 @@
+
+name: DEPLOY_REACT_APP_TO_SURGE
+
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Install node-js v 12
+      - name: Install Node-js
+        uses: actions/setup-node@v2-beta
+        with:
+            node-version: 12
+
+      # Install yarn
+      - name: install yarn
+      - uses: actions/borales/yarn@v2.0.0
+        with:
+            cmd: install
+      - name: Build App
+        run: yarn build
+      - name: install surge
+        run: npm install --global surge
+      - name: Deploy app to surge
+        run: surge ./build testreactapp01212.sh --token ${{secrets.SURGE_TOKEN}}
+        
+      
+      
+        
