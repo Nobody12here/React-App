@@ -23,15 +23,13 @@ jobs:
 
       # Install node-js v 12
       - name: Install Node-js
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3.3
         with:
             node-version: 12
 
       # Install yarn
       - name: install yarn
-      - uses: actions/borales/yarn@v2.0.0
-        with:
-            cmd: install
+        uses: comchangs/action-yarn@v0.1-beta
             
       - name: Build App
         run: yarn build
