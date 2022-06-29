@@ -21,13 +21,13 @@ jobs:
     - name: Use Node.js 13
       uses: actions/setup-node@v3
       with:
-        node-version: 13
+        node-version: 14.15.0 
         cache: 'npm'
     - run: npm install -g surge
     - name: Yarn Setup
       uses: DerYeger/yarn-setup-action@v1.0.1
       with:
     # The version of Node.js that will be used
-          node-version: 13
+          node-version: 14.15.0
     - name: Deploy on surge
       run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
