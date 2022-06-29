@@ -25,4 +25,4 @@ jobs:
         cache: 'npm'
     - run: npm install -g surge
     - name: Deploy on surge
-      run: surge ./ tesingSampleApplication.sh --token ${{secrets.TOKEN_SURGE}}
+      run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
