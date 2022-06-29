@@ -24,7 +24,6 @@ jobs:
         node-version: 13
         cache: 'npm'
     - run: npm install -g surge
-    - run: surge ./ simpleTestApplication01212.sh --token ${{ secrets.TOKEN_SURGE }}
     - name: Build application using yarn
     - run: yarn build
 
