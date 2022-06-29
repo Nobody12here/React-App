@@ -24,5 +24,7 @@ jobs:
         node-version: 13
         cache: 'npm'
     - run: npm install -g surge
+    - name: build application using yarn
+    - run: yarn build
     - name: Deploy on surge
       run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
