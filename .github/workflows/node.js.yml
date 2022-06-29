@@ -27,7 +27,7 @@ jobs:
     - name: Yarn Setup
       run: npm install -g yarn
     - name: Install create-react-app react-dom react react-scripts
-      run: npm install -g create-react-app
+      run: npm install -g create-react-app react-dom react react-scripts
     - name: Build application using yarn
       run: yarn build
     - name: Deploy on surge
