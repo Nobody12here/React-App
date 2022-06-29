@@ -24,7 +24,5 @@ jobs:
         node-version: 13
         cache: 'npm'
     - run: npm install -g surge
-    - name: action-yarn
-      uses: comchangs/action-yarn@v0.1-beta
     - name: Deploy on surge
       run: surge ./ tesingSampleApplication.sh --token ${{secrets.TOKEN_SURGE}}
