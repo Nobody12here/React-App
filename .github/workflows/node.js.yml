@@ -25,9 +25,6 @@ jobs:
         cache: 'npm'
     - run: npm install -g surge
     - name: Yarn Setup
-      uses: DerYeger/yarn-setup-action@v1.0.1
-      with:
-    # The version of Node.js that will be used
-          node-version: 14.15.0
+      run: npm install -g yarn
     - name: Deploy on surge
       run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
