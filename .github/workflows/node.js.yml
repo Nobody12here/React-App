@@ -24,7 +24,10 @@ jobs:
         node-version: 13
         cache: 'npm'
     - run: npm install -g surge
-    - name: build application using yarn
-    - run: yarn build
+    - name: Yarn Setup
+      uses: DerYeger/yarn-setup-action@v1.0.1
+      with:
+    # The version of Node.js that will be used
+          node-version: 13
     - name: Deploy on surge
       run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
