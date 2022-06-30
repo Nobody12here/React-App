@@ -33,4 +33,4 @@ jobs:
     - name: Build application using yarn
       run: yarn build
     - name: Deploy on surge
-      run: surge ./ sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
+      run: surge ./build sample-react-app-22.surge.sh --token ${{secrets.TOKEN_SURGE}}
