@@ -39,5 +39,11 @@
   "main": "index.js",
   "repository": "https://github.com/Nobody12here/React-App.git",
   "author": "Nobody12here <uraja01313@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.9",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  }
 }
